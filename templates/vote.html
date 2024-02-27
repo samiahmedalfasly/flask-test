@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<header><title>تصويت ايميل</title></header>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<body>
+    <form >
+        <input id="url_id" type="text" name="url" title="ادخل رابط المسابقة"/>
+        <span class="help-text">رابط المسابقة</span>
+        <button  id="submit_button" type="button">بدء التصويت</button>
+    </form>
+    <iframe width="100%" id="fram_id" height="1000" ></iframe>
+</body>
+<script>
+    $("#submit_button").click(function() {
+          var url_id = $("#url_id").val();
+          $.ajax({
+              url: "/vote_url",
+              type: "POST",
+              data: { url: url_id },
+              success: function(response) {
+                  console.log(response);
+              },
+              error: function(error) {
+                  console.error(error);
+              }
+          });
+      });
+      $("#url_id").change(function() {
+        var iframe = document.getElementById("fram_id");
+        iframe.src = this.value; 
+      });
+    // var url = document.getElementById("url_id");
+    // url.addEventListener("change", function() {
+    //     iframe.src = this.value; 
+    // });
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 2px;
+    }
+    /* .container {
+        display: flex;
+    }
+     */
+    /* .container input {
+        margin-right: 10px;
+    } */
+
+    form {
+        display: flex;
+        border: 1px solid #ccc;
+        /* padding: 20px; */
+        width: 100%;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    input {
+        /* width: 100%; */
+        padding: 5px;
+        border: 2px solid #ccc;
+        margin-right: 0px;
+        /* width: 400px; */
+        width: 130%;
+    }
+
+    a{
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        font-size: x-large;
+    }
+    button {
+        background-color: #38b6f0;
+        color: #fff;
+        /* padding: 10px 20px; */
+        border: 1px solid #000;
+        cursor: pointer;
+        width: 20%;
+        text-align: center;
+        margin-top: 5px;
+        border-radius: 20%;
+        /* height: 20px; */
+        margin-left: 5%;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        font-size: x-large;
+    }
+
+    button:hover {
+        background-color: #0b1fff;
+        color: black;
+    }
+</style>
+
+</html>

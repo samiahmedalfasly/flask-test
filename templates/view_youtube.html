@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>زيادة مشاهدات يوتيوب حقيقي</title>
+    </header>
+    <body>
+        {% for n in range(count) %}
+            {% for url in url_list %}
+                <iframe width="140" height="140" src="{{ url }}"></iframe>
+            {% endfor %}
+        {% endfor %}
+    </body>
+    <script type="text/javascript">
+        let mins2 = '{{minutes}}';
+        // setTimeout(function () {
+        //     var newTab = window.open('http://127.0.0.1:5000', '_blank');
+        // }, mins2  * 60 * 1000);
+        let mins = {{minutes}};
+        setTimeout(function () {
+            // window.close();
+            location.reload()
+        }, mins  * 60 * 1001);
+    </script>
+</html>

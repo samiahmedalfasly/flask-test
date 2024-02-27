@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>حسن العجمي</title>
+</header>
+
+<body>
+    <form >
+        {% for i in range(count) %}
+
+        <button type="button" value="button"><a href="{{ url_for('youtube_views', num_page=i + 1) }}"> {{i + 1}} الانتقال
+                الى زيادة مشاهدات الفيديو</a></button>
+                <br/>
+        {% endfor %}
+        <button type="button" value="button"><a href="{{ url_for('vote') }}">الانتقال الى المسابقة(الاستبيان)</a></button>
+    </form>
+   
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    form {
+        border: 1px solid #ccc;
+        padding: 30px;
+        padding-left: 15%;
+        /* padding-right: 10%; */
+        width: 90%;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px;
+        border: 2px solid #ccc;
+        width: 70%;
+        font-weight: bold;
+        text-align: center;
+    }
+    a{
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        font-size: x-large;
+    }
+    button {
+        background-color: #38b6f0;
+        color: #fff;
+        padding: 10px 20px;
+        border: 1px solid #000;
+        cursor: pointer;
+        width: 70%;
+        text-align: center;
+        margin-top: 5px;
+        border-radius: 20%;
+        height: 70px;
+    }
+
+    button:hover {
+        background-color: #0b1fff;
+        color: black;
+    }
+</style>
+
+</html>
