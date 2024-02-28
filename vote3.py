@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 
 def run_vote(url="https://docs.google.com/forms/d/e/1FAIpQLSeZ6-aP0rMCnhEreGn8aTqQ0AispJZU_ucSm97HXrz_8j3wcg/viewform", option="محمد"):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=300, channel='chrome')
+        browser = p.chromium.launch(headless=False, slow_mo=300, channel='chromium')
         page = browser.new_page()
         for i in range(10000000):
             try:
