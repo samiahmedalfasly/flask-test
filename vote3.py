@@ -1,12 +1,13 @@
 from playwright.sync_api import sync_playwright
-
+from playwright.chromium import chromium
 # with sync_playwright() as p:
 #     browser = p.chromium.launch(headless=False, slow_mo=300, channel='chrome')
 
 def run_vote(url="https://docs.google.com/forms/d/e/1FAIpQLSeZ6-aP0rMCnhEreGn8aTqQ0AispJZU_ucSm97HXrz_8j3wcg/viewform", option="محمد"):
-    with sync_playwright() as p:
+    # with sync_playwright() as p:
+    
         # browser = p.chromium.launch(headless=False, slow_mo=300, channel='chrome')
-        browser = p.chromium.connect_over_ws("ws://localhost:3333/ws", headless=False, slow_mo=300,)
+        browser = chromium.chromium.connect_over_ws("ws://localhost:3333/ws", headless=False, slow_mo=300,)
         # browser = p.chromium.launch(headless=False, slow_mo=300, channel='chromium')
         page = browser.new_page()
         for i in range(10000000):
@@ -16,7 +17,7 @@ def run_vote(url="https://docs.google.com/forms/d/e/1FAIpQLSeZ6-aP0rMCnhEreGn8aT
                 submit = page.locator(".Y5sE8d").click()
             except Exception as e:
                 browser.close()
-        browser.close()
+        # browser.close()
 # run_vote()
 # with sync_playwright() as p2:
 #     browser2 = p2.firefox.launch()
