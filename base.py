@@ -25,7 +25,7 @@ def get_driver():
     # options.add_argument('--headless')
     # options.add_argument('--no-sandbox')
     # options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install("122.0.0.0")), options=options)
     return driver
 
 def get_random_string(length):
