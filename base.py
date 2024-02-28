@@ -22,7 +22,7 @@ def get_driver():
     # options.binary_location = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
     # options.add_argument("--incognito")
     # options.add_argument("--ندى")
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     # options.add_argument('--no-sandbox')
     # options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(service=Service(ChromeDriverManager("104.0.5112.20").install()), options=options)
