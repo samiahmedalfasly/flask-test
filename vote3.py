@@ -7,7 +7,7 @@ def run_vote(url="https://docs.google.com/forms/d/e/1FAIpQLSeZ6-aP0rMCnhEreGn8aT
     with sync_playwright() as p:
     
         # browser = p.chromium.launch(headless=False, slow_mo=300, channel='chrome')
-        firefox
+        
         browser = p.firefox.launch(headless=False, slow_mo=300)
         # browser = chromium.chromium.connect_over_ws("ws://localhost:3333/ws", headless=False, slow_mo=300,)
         # browser = p.chromium.launch(headless=False, slow_mo=300, channel='chromium')
