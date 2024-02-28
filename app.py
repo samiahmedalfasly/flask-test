@@ -80,7 +80,7 @@ def youtube_views(num_page=1):
 
 @app.route('/vote_url', methods = ['POST'])
 def vote_url():
-    from vote import run_vote
+    from vote3 import run_vote
     run_vote()
     return "url data: "
 
