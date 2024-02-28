@@ -14,7 +14,7 @@ def run_vote(url="https://docs.google.com/forms/d/e/1FAIpQLSeZ6-aP0rMCnhEreGn8aT
             except Exception as e:
                 browser.close()
         browser.close()
-run_vote()
+# run_vote()
 # with sync_playwright() as p2:
 #     browser2 = p2.firefox.launch()
 #     print("browser2", browser2)
