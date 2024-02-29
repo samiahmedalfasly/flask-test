@@ -11,14 +11,16 @@
         {% endfor %}
     </body>
     <script type="text/javascript">
-        let mins2 = '{{minutes}}';
-        // setTimeout(function () {
-        //     var newTab = window.open('http://127.0.0.1:5000', '_blank');
-        // }, mins2  * 60 * 1000);
-        let mins = {{minutes}};
+        let mins2 = {{minutes}};
         setTimeout(function () {
-            // window.close();
+            // var newTab = window.open(d, '_blank');
+            window.open(window.location.href, "_blank");
+        }, mins2  * 60 * 1000);
+        setTimeout(function () {
+            window.close();
+        }, mins2  * 60 * 1004);
+         setTimeout(function () {
             location.reload()
-        }, mins  * 60 * 1001);
+        }, mins2  * 60 * 1006);
     </script>
 </html>
